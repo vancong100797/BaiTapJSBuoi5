@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <!-- Bài tập 1 -->
+
+    <!-- Cách 1 -->
+    <div class="container mt-5">
+        <div class="w-50 border border-success rounded p-5">
+            <h4 class="mb-3">Quản lý tuyển sinh</h4>
+            <form>
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nhập tên">
+                </div>
+                <div class="form-group">
+                    <label for="diemChuan">Điểm chuẩn</label>
+                    <input type="number" class="form-control" id="diemChuan" placeholder="Nhập điểm chuẩn">
+                </div>
+                <div class="form-group">
+                    <label for="diemA">Điểm môn A</label>
+                    <input type="number" class="form-control" id="diemA" placeholder="Nhập điểm môn A">
+                </div>
+                <div class="form-group">
+                    <label for="diemB">Điểm môn B</label>
+                    <input type="number" class="form-control" id="diemB" placeholder="Nhập điểm môn B">
+                </div>
+                <div class="form-group">
+                    <label for="diemC">Điểm môn C</label>
+                    <input type="number" class="form-control" id="diemC" placeholder="Nhập điểm môn C">
+                </div>
+                <label for="khuVucUuTien">Khu vực ưu tiên<br>(Chọn X nếu không thuộc đối tượng ưu tiên)</label>
+                <select class="form-control my-2" id="khuVucUuTien">
+                    <option>--Chọn khu vực--</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>X</option>
+                </select>
+                <label for="doiTuongUuTien">Đối tượng ưu tiên<br>(Chọn 0 nếu không thuộc đối tượng ưu tiên)</label>
+                <select class="form-control my-2" id="doiTuongUuTien">
+                    <option>--Chọn đối tượng--</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>0</option>
+                </select>
+                <button onclick="ketQuaTuyenSinh()" type="button" class="shadow-lg my-2 px-4 py-2 bg-danger rounded">Kết quả</button>
+                <p id="ketQua" class="alert alert-danger mt-4"></p>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Cách 2 -->
+    <!-- <div class="container mt-5">
+        <div class="w-50 border border-success rounded p-5">
+            <h4 class="mb-3">Quản lý tuyển sinh</h4>
+            <form>
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nhập tên`">
+                </div>
+                <div class="form-group">
+                    <label for="diemChuan">Điểm chuẩn</label>
+                    <input type="number" class="form-control" id="diemChuan" placeholder="Nhập điểm chuẩn">
+                </div>
+                <div class="form-group">
+                    <label for="diemA">Điểm môn A</label>
+                    <input type="number" class="form-control" id="diemA" placeholder="Nhập điểm môn A">
+                </div>
+                <div class="form-group">
+                    <label for="diemB">Điểm môn B</label>
+                    <input type="number" class="form-control" id="diemB" placeholder="Nhập điểm môn B">
+                </div>
+                <div class="form-group">
+                    <label for="diemC">Điểm môn C</label>
+                    <input type="number" class="form-control" id="diemC" placeholder="Nhập điểm môn C">
+                </div>
+                <label for="kV">Khu vực</label>
+                <select class="form-control my-2" id="kV">
+                    <option id="" value="">--Chọn khu vực--</option>
+                    <option id="kVA" value="2">A</option>
+                    <option id="kVB" value="1">B</option>
+                    <option id="kVC" value="0.5">C</option>
+                    <option id="kVX" value="0">X</option>
+                </select>
+                <label for="dT">Đối tượng</label>
+                <select class="form-control my-2" id="dT">
+                    <option id="" value="">--Chọn đối tượng--</option>
+                    <option id="dT1" value="2.5">1</option>
+                    <option id="dT2" value="1.5">2</option>
+                    <option id="dT3" value="1">3</option>
+                    <option id="dT0" value="0">0</option>
+                </select>
+                <button onclick="kQTS()" type="button" class="shadow-lg my-2 px-4 py-2 bg-danger rounded">Kết quả</button>
+                <p id="ketQua" class="alert alert-danger mt-4"></p>
+            </form>
+        </div>
+    </div> -->
+
+    
+
+    <!-- Bài tập 2 -->
+    <div class="container mt-5 my-5">
+        <div class="w-50 border border-success rounded p-5">
+            <h4 class="mb-3">Tính tiền điện</h4>
+            <form>
+                <div class="form-group">
+                    <label for="hoTen">Họ và tên</label>
+                    <input type="text" class="form-control" id="hoTen" placeholder="Nhập tên">
+                </div>
+                <div class="form-group">
+                    <label for="kW">Số kW</label>
+                    <input type="number" class="form-control" id="kW" placeholder="Nhập số kW">
+                </div>
+                <button onclick="tinhTienDien()" type="button" class="shadow-lg my-2 px-4 py-2 bg-danger rounded">Tính tiền</button>
+                <p id="tienDien" class="alert alert-danger mt-4"></p>
+            </form>
+        </div>
+    </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+            crossorigin="anonymous"></script>
+
+
+        <script src="./js/bt1.js"></script>
+        <!-- <script src="./js/bt2.js"></script> -->
+</body>
+
+</html>
